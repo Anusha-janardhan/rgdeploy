@@ -41,6 +41,7 @@ echo "BaseURL=$baseurl"
 echo "TGARN=$tgarn"
 
 if [ ! -z $tgarn ]; then
+
 	ec2instanceid=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
 	echo "Registering instance $ec2instanceid with Target group: $tgarn"
 	aws elbv2 register-targets --targets "Id=$ec2instanceid,Port=$port" --target-group-arn "$tgarn"
