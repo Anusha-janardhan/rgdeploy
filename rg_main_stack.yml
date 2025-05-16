@@ -127,6 +127,7 @@ Resources:
               - ec2:CreateNetworkInterface
               - elasticloadbalancing:RegisterTargets
               - sts:AssumeRole
+              - kms:Decrypt
             Resource: "*"
           - Sid: "RoleRelatedPermissions"
             Effect: Allow
